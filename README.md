@@ -1,1 +1,1 @@
-# List of React-Native-Zero-To-Hero proejct 
+# List of React-Native-Zero-To-Hero  
