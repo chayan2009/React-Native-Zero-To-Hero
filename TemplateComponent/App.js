@@ -8,16 +8,17 @@ import {
   TouchableOpacity,
   FlatList,
 } from "react-native";
+import GoalItem from "./component/GoalItem";
 
 export default function App() {
   const [enteredGoalText, setEnteredGoalText] = useState("");
   const [courseGoals, setCourseGoals] = useState([]);
 
-  function goalInputHandler(enteredText) {
+  const goalInputHandler=(enteredText) =>{
     setEnteredGoalText(enteredText);
   }
 
-  function addGoalHandler() {
+  const addGoalHandler=()=> {
     if (enteredGoalText.trim().length === 0) return; // Prevent adding empty goals
     setCourseGoals((currentCourseGoals) => [
       ...currentCourseGoals,
@@ -60,11 +61,7 @@ export default function App() {
         <FlatList
           data={courseGoals}
           renderItem={(itemData) => {
-            return(
-              <View style={styles.goalItem}>
-              <Text style={styles.goalText}>{itemData.item.text}</Text>
-            </View>
-            )
+            return <GoalItem text = {itemData.item.text}/>;
           }}
           keyExtractor={(item,index)=>{
              return item.id
@@ -128,15 +125,5 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     color: "#6200ea",
     marginVertical: 10,
-  },
-  goalItem: {
-    marginVertical: 8,
-    borderRadius: 6,
-    backgroundColor: "#5e08cc",
-    padding: 12,
-  },
-  goalText: {
-    color: "#fff",
-    fontSize: 16,
-  },
+  }
 });
