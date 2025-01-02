@@ -13,7 +13,7 @@ export default function App() {
         placeholder="email"
         style={{ width:'100%',borderColor: "black", borderWidth: 1, margin: 10, padding: 20 }}
       />
-      <Button title="asdasdas"></Button>
+      <Button title="Submit"></Button>
       </View>
       <View>
         <Text> List Of Goals</Text>
