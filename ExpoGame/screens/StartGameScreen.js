@@ -1,4 +1,4 @@
-import { StyleSheet, View, TextInput, Alert } from "react-native";
+import { StyleSheet, View, TextInput, Alert ,KeyboardAvoidingView} from "react-native";
 import PrimaryButton from "../components/PrimaryButton";
 import { useState } from "react";
 import GameScreen from "./GameScreen";
@@ -27,6 +27,7 @@ const StartGameScreen = ({onPickNumber}) => {
   }
 
   return (
+    
     <View style={styles.inputContainer}>
       <TextInput
         style={styles.numberInput}
